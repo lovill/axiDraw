@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """\
 Simple g-code streaming script for grbl
-"""
+"""                                    
 
 import serial
 import time
@@ -9,7 +9,7 @@ import time
 verbose=False
 
 # Open grbl serial port
-s = serial.Serial('/dev/cu.usbmodemFA131',115200)
+s = serial.Serial('COM6',115200)
 
 # Open g-code file
 f = open('gcode_out.txt','r');
@@ -19,7 +19,7 @@ s.write("\r\n\r\n")
 time.sleep(2)   # Wait for grbl to initialize
 s.flushInput()  # Flush startup text in serial input
 
-# Stream g-code to grbl
+# Stream g-code to grbl 
 for line in f:
     l = line.strip() # Strip all EOL characters for streaming
     if verbose:

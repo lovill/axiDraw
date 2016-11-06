@@ -9,7 +9,7 @@ import time
 verbose=False
 
 # Open grbl serial port
-s = serial.Serial('COM6',115200)
+s = serial.Serial('/dev/ttyACM3',115200)
 
 # Open g-code file
 f = open('gcode_out.txt','r');
